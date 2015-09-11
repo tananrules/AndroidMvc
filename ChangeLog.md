@@ -1,3 +1,6 @@
+Version: 1.1.10
+* Bump up Android sdk level and support library version
+
 Version: 1.1.9
 Fix bug
 * When a recovering fragment in view pager its onViewReady is not called when its holding activity resume by popping out from another above activity.
