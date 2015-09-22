@@ -160,11 +160,11 @@ public abstract class MvcFragment extends Fragment {
      * @param savedInstanceState The savedInstanceState
      * @return The view for the fragment
      */
-    @Override
-    final public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        injectDependencies();
-        return inflater.inflate(getLayoutResId(), container, false);
-    }
+    // @Override
+    // final public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    //     injectDependencies();
+    //     return inflater.inflate(getLayoutResId(), container, false);
+    // }
 
     /**
      * This Android lifecycle callback is sealed. Use {@link #onViewReady(View, Bundle, Reason)}
