@@ -103,7 +103,7 @@ public abstract class MvcFragment extends Fragment {
      *
      * @return The id of the fragment layout
      */
-    protected abstract int getLayoutResId();
+    // protected abstract int getLayoutResId();
 
     void injectDependencies() {
         if (dependenciesInjected) {
