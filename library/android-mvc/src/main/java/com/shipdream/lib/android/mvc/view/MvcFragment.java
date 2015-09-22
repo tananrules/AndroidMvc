@@ -106,6 +106,9 @@ public abstract class MvcFragment extends Fragment {
     protected abstract int getLayoutResId();
 
     void injectDependencies() {
+        if (dependenciesInjected) {
+            dependenciesInjected = false;
+        }
         if (!dependenciesInjected) {
             AndroidMvc.graph().inject(this);
             dependenciesInjected = true;
