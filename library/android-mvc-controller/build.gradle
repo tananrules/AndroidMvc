@@ -17,6 +17,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply from: 'https://raw.github.com/venkatesh3007/gradle-local-mvn-push/non-android/gradle-local-mvn-push.gradle'
 
 task sourceJar(type: Jar) {
     from sourceSets.main.java.srcDirs

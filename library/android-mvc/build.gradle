@@ -17,11 +17,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply from: 'https://raw.github.com/venkatesh3007/gradle-local-mvn-push/master/gradle-local-mvn-push.gradle'
 
 dependencies {
     compile project(':library:android-mvc-controller')
     compile rootProject.lib.androidSupportLib
 }
+
 
 android {
     compileOptions {
@@ -51,6 +54,7 @@ android {
         }
     }
 }
+
 
 install {
     repositories.mavenInstaller {
@@ -90,27 +94,39 @@ install {
     }
 }
 
-task androidJavadocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        def deployPath = file(getProperty('aar.deployPath'))
+//        repository(url: "file://${deployPath.absolutePath}")
+//        pom.project {
+//            groupId 'xyz.shipdream'
+//            artifactId 'android-mvc'
+//            version "1.2.0"
+//        }
+//    }
+//}
 
-task androidJavadocsJar(type: Jar) {
-    classifier = 'javadoc'
-    baseName = archivesBaseName
-    from androidJavadocs.destinationDir
-}
+//task androidJavadocs(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task androidJavadocsJar(type: Jar) {
+//    classifier = 'javadoc'
+//    baseName = archivesBaseName
+//    from androidJavadocs.destinationDir
+//}
+//
+//task androidSourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    baseName = archivesBaseName
+//    from android.sourceSets.main.java.srcDirs
+//}
 
-task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
-    baseName = archivesBaseName
-    from android.sourceSets.main.java.srcDirs
-}
-
-artifacts {
-    archives androidSourcesJar
-    archives androidJavadocsJar
-}
+//artifacts {
+//    archives androidSourcesJar
+//    archives androidJavadocsJar
+//}
 
 bintray {
     user = System.properties['bintray.user']

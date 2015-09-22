@@ -70,6 +70,9 @@ if (JavaVersion.current().isJava8Compatible()) {
 }
 
 ext {
+    PUBLISH_GROUP_ID = 'xyz.shipdream'
+    PUBLISH_ARTIFACT_ID = 'android-mvc'
+    PUBLISH_VERSION = '1.2.0'
     siteUrl = 'https://github.com/kejunxia/AndroidMvc'      // Homepage URL of the library
     gitUrl = 'https://github.com/kejunxia/AndroidMvc.git'   // Git repository URL
     version = [
@@ -77,7 +80,7 @@ ext {
         minor: 2,
         patch : 0
     ]
-    libGroup = 'com.shipdream'
+    libGroup = 'xyz.shipdream'
     libVersion = "${version.major}.${version.minor}.${version.patch}"
     shouldPublish = false
 
